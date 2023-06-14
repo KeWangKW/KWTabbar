@@ -11,6 +11,9 @@ import Foundation
 
 @objcMembers public class KWTabBarController: UITabBarController {
     
+    let KScreenWidth: CGFloat = UIScreen.main.bounds.size.width
+    let KTabBarHeight: CGFloat = 49 + UIApplication.shared.windows[0].safeAreaInsets.bottom
+    
     var vcArr:[UIViewController] = []
     var titleArr:[String] = []
     var normalImageArr:[String] = []
@@ -80,7 +83,8 @@ import Foundation
                     let newTabIndex = tabBarController.selectedIndex
                     print("Selected Tab Index Changed to: \(newTabIndex)")
                     
-                    if (self.humpType == 0) { //不需要绘制
+                    if (self.humpType == 0) { //不需要绘制 只设置阴影
+                        self.setTabBarShadowWith(centerArr: [], radius: 0, index: 0)
                         return
                     } else if (self.humpType == 3) { //固定圆弧样式 只绘制一次
                         
@@ -114,33 +118,6 @@ import Foundation
         let tabbarAppearance: UITabBar = UITabBar.appearance()
         tabbarAppearance.isTranslucent = false
         tabbarAppearance.barTintColor = .white
-        
-        
-        if self.humpType == 0 {
-            self.setTabBarShadowWith(centerArr: [], radius: 0, index: 0)
-        }
-//        self.tabBar.layer.shadowColor = UIColor(red: 78/255, green: 112/255, blue: 145/255, alpha: 0.19).cgColor
-//        self.tabBar.layer.shadowOffset = CGSizeMake(0, -1.5)
-//        self.tabBar.layer.shadowOpacity = 1;
-//        self.tabBar.layer.shadowColor = UIColor.black.cgColor
-//        self.tabBar.layer.shadowOffset = CGSizeMake(0, -1)
-//        self.tabBar.layer.shadowOpacity = 1
-//        if (self.humpType == 0) {
-//            let view = UIView(frame: CGRectMake(0, -0.5, KScreenWidth, 0.5))
-//            view.backgroundColor = .black
-//            tabbarAppearance.insertSubview(view, at: 0)
-//        }
-        
-//        UIGraphicsBeginImageContextWithOptions(CGSize(width: KScreenWidth, height: 0.5), false, 0)
-//        let path = UIBezierPath.init(rect: CGRect.init(x: 0, y: 0, width: KScreenWidth, height: 0.5))
-//        UIColor.red.setFill()// 自定义TabBar分割线颜色
-//        path.fill()
-//        let image = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//        tabBar.backgroundImage = UIImage()
-//        tabBar.shadowImage = image
-        
-        
         
         var normalAttributes = [NSAttributedString.Key: Any]()
         normalAttributes[NSAttributedString.Key.font] = UIFont.systemFont(ofSize: 12)

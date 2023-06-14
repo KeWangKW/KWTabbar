@@ -15,7 +15,6 @@
 		0EEBD1082A394C73003F04DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBD1062A394C73003F04DF /* LaunchScreen.storyboard */; };
 		0EEBD10B2A394C73003F04DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EEBD10A2A394C73003F04DF /* main.m */; };
 		0EEBD1142A394CD9003F04DF /* KWTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEBD1122A394CD9003F04DF /* KWTabBarController.swift */; };
-		0EEBD11B2A394D7F003F04DF /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEBD11A2A394D7F003F04DF /* AppConst.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +31,6 @@
 		0EEBD1092A394C73003F04DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EEBD10A2A394C73003F04DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0EEBD1122A394CD9003F04DF /* KWTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWTabBarController.swift; sourceTree = "<group>"; };
-		0EEBD11A2A394D7F003F04DF /* AppConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
 		0EEBD1202A39541C003F04DF /* KWOC-Bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KWOC-Bridging-header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				0EEBD1122A394CD9003F04DF /* KWTabBarController.swift */,
-				0EEBD11A2A394D7F003F04DF /* AppConst.swift */,
 			);
 			path = KWFrameWork;
 			sourceTree = "<group>";
@@ -165,7 +162,6 @@
 				0EEBD1002A394C71003F04DF /* ViewController.m in Sources */,
 				0EEBD0FA2A394C71003F04DF /* AppDelegate.m in Sources */,
 				0EEBD10B2A394C73003F04DF /* main.m in Sources */,
-				0EEBD11B2A394D7F003F04DF /* AppConst.swift in Sources */,
 				0EEBD1142A394CD9003F04DF /* KWTabBarController.swift in Sources */,
 				0EEBD0FD2A394C71003F04DF /* SceneDelegate.m in Sources */,
 			);

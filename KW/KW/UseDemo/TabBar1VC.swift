@@ -14,7 +14,7 @@ class TabBar1VC: UIViewController {
         view.backgroundColor = .white
         // Do any additional setup after loading the view.
         
-        let btn = UIButton(frame: CGRectMake(10, KScreenHeight-200, 100, 40))
+        let btn = UIButton(frame: CGRectMake(10, UIScreen.main.bounds.size.height-200, 100, 40))
         btn.backgroundColor = .black
         btn.setTitle("返回", for: .normal)
         btn.addTarget(self, action: #selector(back), for: .touchUpInside)
