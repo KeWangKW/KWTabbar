@@ -25,6 +25,8 @@ class TabBar1VC: UIViewController {
 //        self.tabBarController?.tabBar.layer.shadowColor = UIColor(red: 78/255, green: 112/255, blue: 145/255, alpha: 0.19).cgColor
 //        self.tabBarController?.tabBar.layer.shadowOffset = CGSizeMake(0, -1.5)
 //        self.tabBarController?.tabBar.layer.shadowOpacity = 1;
+        
+        self.tabBarItem.badgeValue = "99"
     }
     
     

@@ -31,6 +31,10 @@ import Foundation
      backGroundColor: 背景色
      */
     
+    var radius:CGFloat = 28; //默认圆弧绘制半径，请根据使用的图片自行修改
+    var imageEdgeInsets_Move = UIEdgeInsets(top: -15, left: 0, bottom: 0, right: 0); //默认图片偏移，请根据使用的图片自行修改
+    var imageEdgeInsets_Normal = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0); //不偏移
+    
     init(_ vcArr:[UIViewController] ,
          _ titleArr:[String] ,
          _ normalImageArr:[String] ,
@@ -97,7 +101,7 @@ import Foundation
                             let centerX = itemWidth * CGFloat(idx) + itemWidth/2
                             centerArr.append(CGPointMake(centerX, 10))
                         }
-                        self.setTabBarShadowWith(centerArr: centerArr, radius: 28 ,index: newTabIndex)
+                        self.setTabBarShadowWith(centerArr: centerArr, radius: radius ,index: newTabIndex)
                         
                     }else{
                         self.setUpTabbarHump(index: newTabIndex)
@@ -176,7 +180,7 @@ extension KWTabBarController: UITabBarControllerDelegate {
         
         let itemWidth = KScreenWidth / CGFloat(vcArr.count)
         let centerX = itemWidth * CGFloat(index) + itemWidth/2
-        self.setTabBarShadowWith(centerArr: [CGPointMake(centerX, 10)], radius: 28 ,index: index)
+        self.setTabBarShadowWith(centerArr: [CGPointMake(centerX, 10)], radius: radius ,index: index)
         
         
     }
@@ -187,22 +191,22 @@ extension KWTabBarController: UITabBarControllerDelegate {
             
             if (self.humpType == 1) {
                 if (item == vc.tabBarItem) {
-                    vc.tabBarItem.imageInsets = UIEdgeInsets(top: -15, left: 0, bottom: 0, right: 0)
+                    vc.tabBarItem.imageInsets = imageEdgeInsets_Move //UIEdgeInsets(top: -15, left: 0, bottom: 0, right: 0)
                 }else{
-                    vc.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                    vc.tabBarItem.imageInsets = imageEdgeInsets_Normal //UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
                 }
             }else if (self.humpType == 2) {
                 if (item == vc.tabBarItem && self.humpAddress.contains(index)) {
-                    vc.tabBarItem.imageInsets = UIEdgeInsets(top: -15, left: 0, bottom: 0, right: 0)
+                    vc.tabBarItem.imageInsets = imageEdgeInsets_Move
                 }else{
-                    vc.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                    vc.tabBarItem.imageInsets = imageEdgeInsets_Normal
                 }
             }else if (self.humpType == 3) {
                 let humpArrContain_index = self.children.firstIndex(of: vc) ?? 0
                 if (self.humpAddress.contains(humpArrContain_index)) {
-                    vc.tabBarItem.imageInsets = UIEdgeInsets(top: -15, left: 0, bottom: 0, right: 0)
+                    vc.tabBarItem.imageInsets = imageEdgeInsets_Move
                 }else{
-                    vc.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                    vc.tabBarItem.imageInsets = imageEdgeInsets_Normal
                 }
             }
             
